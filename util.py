@@ -1,13 +1,11 @@
 
-def file_to_bytes(path):
-	# return the file in bytes format
-	# can be seen as an array of ints ranging 0 -- 255
-	f = open(path, 'rb')
-	bs = f.read()
+def file_to_str(path):
+	f = open(path, 'r')
+	s = f.read()
 	f.close()
-	return bs
+	return s
 
-def bytes_to_file(bs, path):
-	f = open(path, 'wb')
-	f.write(bs)
+def str_to_file(s, path):
+	f = open(path, 'w')
+	f.write(s)
 	f.close()
