@@ -11,7 +11,7 @@ def dc(cx):
 	return cx
 
 class LZ78:
-	def __init__(self, bs):
+	def __init__(self, s):
 		self.s = s
 		self.encoding = []
 		self.entry_to_index = {(): -1}
@@ -78,7 +78,9 @@ if __name__ == '__main__':
 	encoder.encode()
 	
 	#encoder.save_file('compressed.txt')
-	#print(len(encoder.encoding))
+	print(len(encoder.encoding))
+	#print(len(encoder.entry_to_index))
+	#print(list(encoder.entry_to_index.keys())[:200])
 
 	new_s = encoder.decode()
 	str_to_file(new_s, 'test_LZ78.txt')
